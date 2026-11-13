@@ -4,7 +4,7 @@
 
 ## A path with unrecorded local exchanges
 
-There are $`N\ge1`$ addressable qubit sites on an open path. Let $`S_i`$ swap sites $`i`$ and $`i+1`$. Each edge has an independent homogeneous Poisson clock of rate $`\gamma>0`$. A clock ring applies that SWAP. There is no additional coherent Hamiltonian or other noise. The averaged storage channel is
+There are $`N\ge1`$ addressable qubit sites on an open path. Let $`S_i`$ swap sites $`i`$ and $`i+1`$. Each edge has an independent homogeneous Poisson clock of rate $`\gamma\gt 0`$. A clock ring applies that SWAP. There is no additional coherent Hamiltonian or other noise. The averaged storage channel is
 
 ```math
 \mathcal E_{N,t}=e^{t\mathcal L_N},\qquad
@@ -35,8 +35,8 @@ Define the recovered channel and its error by
 ```math
 \Lambda=\mathcal D\circ\mathcal E_{N,t}\circ\mathcal V,
 \qquad
-\operatorname{err}(\Lambda)
-=\frac12\|\Lambda-\operatorname{id}_K\|_\diamond.
+\mathrm{err}(\Lambda)
+=\frac12\lVert\Lambda-\mathrm{id}_K\rVert_\diamond.
 ```
 
 The diamond norm makes this a uniform guarantee over all logical inputs, including inputs entangled with any external reference. Let
@@ -44,17 +44,17 @@ The diamond norm makes this a uniform guarantee over all logical inputs, includi
 ```math
 m_\epsilon(N,t)
 =\max\left\{m\in\{0,\ldots,N\}:
-\operatorname{err}(\Lambda)\le\epsilon
+\mathrm{err}(\Lambda)\le\epsilon
 \text{ for some endpoint code}\right\}.
 ```
 
-This is a finite-time, one-use storage quantity. No repeated-channel capacity limit is part of its definition. The theorem uses $`0<\epsilon<1/8`$.
+This is a finite-time, one-use storage quantity. No repeated-channel capacity limit is part of its definition. The theorem uses $`0\lt \epsilon\lt 1/8`$.
 
 For comparison, the entanglement fidelity of a code is
 
 ```math
 F_e=\langle\Phi_K|
-(\operatorname{id}_R\otimes\Lambda)
+(\mathrm{id}_R\otimes\Lambda)
 (|\Phi_K\rangle\langle\Phi_K|)
 |\Phi_K\rangle,
 \qquad
@@ -79,6 +79,6 @@ The result is a quantum-memory capability under the stated noise, rather than a 
 
 ## Exact all-time baseline
 
-The fully symmetric space $`\operatorname{Sym}^N(\mathbb C^2)`$ has dimension $`N+1`$, and every permutation acts as its identity. It therefore stores $`\lfloor\log_2(N+1)\rfloor`$ logical qubits exactly for every $`t`$. At $`t=0`$, the whole register stores $`N`$ qubits. At every positive time the interchange distribution has full permutation support; exact zero-error storage is then restricted to the largest Schur spin factor of dimension $`N+1`$. This inherited exact-error statement is separate from the finite nonzero-error construction.
+The fully symmetric space $`\mathrm{Sym}^N(\mathbb C^2)`$ has dimension $`N+1`$, and every permutation acts as its identity. It therefore stores $`\lfloor\log_2(N+1)\rfloor`$ logical qubits exactly for every $`t`$. At $`t=0`$, the whole register stores $`N`$ qubits. At every positive time the interchange distribution has full permutation support; exact zero-error storage is then restricted to the largest Schur spin factor of dimension $`N+1`$. This inherited exact-error statement is separate from the finite nonzero-error construction.
 
 All payload logarithms use base two. Natural logarithms appear in the random-walk probability bounds.

@@ -30,7 +30,7 @@ The classical distance that will enter the quantum bound is
 
 ```math
 d_N(t)
-=\|\mu_{N,t}-u_N\|_{\mathrm{TV}}
+=\lVert\mu_{N,t}-u_N\rVert_{\mathrm{TV}}
 =\frac12\sum_{\pi\in S_N}
 \left|\mu_{N,t}(\pi)-\frac1{N!}\right|.
 ```
@@ -42,7 +42,7 @@ Lacoin's [Theorem 2.2](https://arxiv.org/html/1309.3873v3) concerns this **path*
 \frac{2\pi^2\gamma\,T_{\mathrm{mix},N}(\delta)}
      {N^2\ln N}
 =1,
-\qquad 0<\delta<1,
+\qquad 0\lt \delta\lt 1,
 ```
 
 where $`T_{\mathrm{mix},N}(\delta)=\inf\{t:d_N(t)\le\delta\}`$. The error level $`\delta`$ is fixed in this limit. No bound uniform in an arbitrarily varying $`\delta_N`$ is inferred from this theorem.
@@ -52,7 +52,7 @@ where $`T_{\mathrm{mix},N}(\delta)=\inf\{t:d_N(t)\le\delta\}`$. The error level 
 The triangle inequality and the unit diamond norm of a unitary channel give
 
 ```math
-\frac12\|\mathcal E_{N,t}-\mathcal P_N\|_\diamond
+\frac12\lVert\mathcal E_{N,t}-\mathcal P_N\rVert_\diamond
 \le
 \frac12\sum_{\pi\in S_N}
 \left|\mu_{N,t}(\pi)-\frac1{N!}\right|
@@ -64,15 +64,16 @@ This includes inputs entangled with any reference. Composing with a CPTP encoder
 For a code of dimension $`K`$, let $`\mathcal A:\mathcal B(\mathbb C^K)\to\mathcal B((\mathbb C^2)^{\otimes N})`$ and $`\mathcal D`$ be its CPTP encoder and decoder. Let
 
 ```math
+\begin{aligned}
 F_e(\mathcal D\mathcal N\mathcal A)
-=
+&=
 \langle\Phi_K|
 (\mathrm{id}\otimes\mathcal D\circ\mathcal N\circ\mathcal A)
 (\Phi_K)
-|\Phi_K\rangle,
-\qquad
-|\Phi_K\rangle=K^{-1/2}\sum_{a=1}^K|a,a\rangle,
-\qquad \Phi_K=|\Phi_K\rangle\langle\Phi_K|.
+|\Phi_K\rangle,\\
+|\Phi_K\rangle&=K^{-1/2}\sum_{a=1}^K|a,a\rangle,\\
+\Phi_K&=|\Phi_K\rangle\langle\Phi_K|.
+\end{aligned}
 ```
 
 Thus $`F_e`$ is an overlap with the normalized maximally entangled state, rather than its square root. The channel comparison implies
@@ -101,7 +102,7 @@ Here $`V_j`$ is a spin representation and $`M_j`$ is its permutation multiplicit
 \mathcal P_N(\rho)
 =
 \bigoplus_j
-\operatorname{Tr}_{M_j}(P_j\rho P_j)
+\mathrm{Tr}_{M_j}(P_j\rho P_j)
 \otimes\frac{I_{M_j}}{\dim M_j}.
 ```
 
@@ -131,7 +132,7 @@ F_e(\mathcal D\mathcal E_{N,t}\mathcal A)
 }
 ```
 
-In particular, if $`F_e\ge1-\varepsilon`$ and $`d_N(t)<1-\varepsilon`$, then
+In particular, if $`F_e\ge1-\varepsilon`$ and $`d_N(t)\lt 1-\varepsilon`$, then
 
 ```math
 \boxed{
@@ -146,13 +147,13 @@ The same bound holds for the stronger complete-channel storage criterion
 
 ```math
 \frac12
-\|\mathcal D\circ\mathcal E_{N,t}\circ\mathcal A-\mathrm{id}_K\|_\diamond
+\lVert\mathcal D\circ\mathcal E_{N,t}\circ\mathcal A-\mathrm{id}_K\rVert_\diamond
 \le\varepsilon,
 ```
 
 because that criterion implies $`F_e\ge1-\varepsilon`$. The converse therefore applies to both entanglement transmission at the stated overlap fidelity and half-diamond storage error.
 
-Fix $`0<\varepsilon<1`$ and $`a>0`$. At times
+Fix $`0\lt \varepsilon\lt 1`$ and $`a\gt 0`$. At times
 
 ```math
 t_N\ge
@@ -167,11 +168,11 @@ Lacoin's theorem gives $`d_N(t_N)\to0`$, and hence
 \log_2(N+1)-\log_2(1-\varepsilon)+o(1).
 ```
 
-For a finite statement, choose a fixed $`0<\delta<1-\varepsilon`$ and assume $`d_N(t)\le\delta`$. Then the right-hand side is simply $`\log_2[(N+1)/(1-\varepsilon-\delta)]`$.
+For a finite statement, choose a fixed $`0\lt \delta\lt 1-\varepsilon`$ and assume $`d_N(t)\le\delta`$. Then the right-hand side is simply $`\log_2[(N+1)/(1-\varepsilon-\delta)]`$.
 
 ## What this comparison establishes
 
-The bound shows that a fully mixed set of positional labels leaves only order $`\log N`$ coherent qubits at any fixed error. The [finite-time construction](storage_theorem.md) retains a polynomially larger payload at $`t=N^{2-\zeta}/\gamma`$ for every fixed $`0<\zeta<2`$. Together, these statements distinguish the diffusive transient from the stationary symmetry sector.
+The bound shows that a fully mixed set of positional labels leaves only order $`\log N`$ coherent qubits at any fixed error. The [finite-time construction](storage_theorem.md) retains a polynomially larger payload at $`t=N^{2-\zeta}/\gamma`$ for every fixed $`0\lt \zeta\lt 2`$. Together, these statements distinguish the diffusive transient from the stationary symmetry sector.
 
 The upper bound uses **classical** permutation mixing as a sufficient condition for the quantum memory to approach its stationary payload. It does not prove that the quantum storage capacity has a cutoff at the same location, determine its exact finite-time value, or close the logarithmic gap between the construction and this late-time comparison. Exact zero-error collapse at every positive time is an inherited, separate statement; it is not evidence of immediate failure at a fixed nonzero error.
 

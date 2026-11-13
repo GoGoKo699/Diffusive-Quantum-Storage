@@ -32,3 +32,7 @@ The finite-parameter examples intentionally retain cases where the displayed low
 These finite calculations do not prove the block-channel identity, coding theorem, random-walk bound, asymptotic scaling or novelty claim. Their proofs and assumptions are given in [`science/`](../science/). The random-subspace check is statistical, and its six-standard-error acceptance tolerance is a consistency check.
 
 No efficient encoder or decoder is implemented here. The script does not test additional physical noise, imperfect controls, a device, or a matching finite-time converse. Its large-parameter rows are calculations of theorem bounds, not numerical demonstrations of large quantum memories.
+
+## Hosted mathematical review
+
+The [read-only hosted check](hosted/README.md) compares every Markdown page at the exact proposed commit with GitHub's actual mathematical rendering at wide and narrow viewports. Its captured output supports a separate visual review; it does not replace the scientific checks above.

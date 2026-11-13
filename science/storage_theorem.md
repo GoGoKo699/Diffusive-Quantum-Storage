@@ -29,8 +29,8 @@ s\le B\log_2R-2\log_2\frac1\eta,
 there exists a code storing $`s-1`$ logical qubits with
 
 ```math
-\frac12\|\mathcal D\circ\mathcal E_{N,t}\circ\mathcal V
--\operatorname{id}_{2^{s-1}}\|_\diamond
+\frac12\lVert\mathcal D\circ\mathcal E_{N,t}\circ\mathcal V
+-\mathrm{id}_{2^{s-1}}\rVert_\diamond
 \le p_*+2\sqrt\eta.
 ```
 
