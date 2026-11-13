@@ -45,7 +45,7 @@ For every integer $`1\le K\le d`$, there is a $`K`$-dimensional encoding subspac
 ```math
 F_e\!\left(\frac{I_K}{K},
 \mathcal D\circ\mathcal T\circ\mathcal V\right)
-\ge 1-\sqrt{\frac{Ke}{b}}.
+\ge 1-\left(\frac{Ke}{b}\right)^{1/2}.
 ```
 
 Here $`F_e`$ is the overlap of the recovered reference/output state with the normalized maximally entangled $`K`$-state, and $`\mathcal V`$ is an isometric encoder. This is a specialization of Klesse's finite-size random-code theorem, [Phys. Rev. A 75, 062315 (2007)](https://doi.org/10.1103/PhysRevA.75.062315), Sec. IV B, Eqs. (28) and (30). The receiver channel has Kraus rank at most $`e`$, and $`\lVert\mathcal T(\pi_A)\rVert_2=1/\sqrt b`$.
@@ -101,9 +101,9 @@ Cauchy-Schwarz on the $`Ke`$-dimensional reference/environment space and Jensen'
 \mathbb E\left\lVert\sigma_{RE}
 -\frac{I_R}{K}\otimes\frac{I_E}{e}\right\rVert_1
 &\le
-\sqrt{\frac{Kd-1}{d^2-1}
-\left(\frac{de}{b}-1\right)}\\
-&\le \sqrt{\frac{Ke}{b}}.
+\left[\frac{Kd-1}{d^2-1}
+\left(\frac{de}{b}-1\right)\right]^{1/2}\\
+&\le \left(\frac{Ke}{b}\right)^{1/2}.
 \end{aligned}
 ```
 
