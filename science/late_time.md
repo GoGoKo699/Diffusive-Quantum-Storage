@@ -64,15 +64,16 @@ This includes inputs entangled with any reference. Composing with a CPTP encoder
 For a code of dimension $`K`$, let $`\mathcal A:\mathcal B(\mathbb C^K)\to\mathcal B((\mathbb C^2)^{\otimes N})`$ and $`\mathcal D`$ be its CPTP encoder and decoder. Let
 
 ```math
+\begin{aligned}
 F_e(\mathcal D\mathcal N\mathcal A)
-=
+&=
 \langle\Phi_K|
 (\mathrm{id}\otimes\mathcal D\circ\mathcal N\circ\mathcal A)
 (\Phi_K)
-|\Phi_K\rangle,
-\qquad
-|\Phi_K\rangle=K^{-1/2}\sum_{a=1}^K|a,a\rangle,
-\qquad \Phi_K=|\Phi_K\rangle\langle\Phi_K|.
+|\Phi_K\rangle,\\
+|\Phi_K\rangle&=K^{-1/2}\sum_{a=1}^K|a,a\rangle,\\
+\Phi_K&=|\Phi_K\rangle\langle\Phi_K|.
+\end{aligned}
 ```
 
 Thus $`F_e`$ is an overlap with the normalized maximally entangled state, rather than its square root. The channel comparison implies
