@@ -1,0 +1,320 @@
+{
+  "seed": 20261113,
+  "numpy_version": "2.3.5",
+  "all_passed": true,
+  "checks": {
+    "symmetric_split": {
+      "passed": true,
+      "length_range": [
+        2,
+        9
+      ],
+      "retained_range": "ceil(L/2) through L-1",
+      "max_isometry_entry_error": 2.220446049250313e-16,
+      "max_uniform_marginal_entry_error": 1.1102230246251565e-16,
+      "max_flat_choi_spectrum_error": 1.6653345369377348e-16,
+      "max_collision_factor_error": 4.440892098500626e-16
+    },
+    "good_permutation_reduction": {
+      "passed": true,
+      "physical_sites": 8,
+      "block_length": 4,
+      "retained_sites": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "reference_dimension": 2,
+      "max_good_permutation_frobenius_error": 7.785719137334932e-17,
+      "good_examples_with_cross_block_discarded_labels": 66,
+      "deliberately_bad_permutation_trace_distance": 0.78078184132054,
+      "input_reference_purity": 0.5374532682701779,
+      "scope": "Generic jointly encoded pure input with external reference; finite valid permutations."
+    },
+    "haar_second_moment": {
+      "passed": true,
+      "examples": [
+        {
+          "L": 3,
+          "k": 2,
+          "blocks": 2,
+          "K": 2,
+          "d_b_e": [
+            16,
+            9,
+            4
+          ],
+          "samples": 1024,
+          "analytic_mean_squared_hs_error": 0.09286492374727669,
+          "observed_mean_squared_hs_error": 0.09286702590149834,
+          "sampling_standard_error": 0.0005106255147576557,
+          "observed_mean_trace_error": 0.7297218767846032,
+          "analytic_trace_error_upper_bound": 0.9428090415820634,
+          "passed": true
+        },
+        {
+          "L": 5,
+          "k": 4,
+          "blocks": 2,
+          "K": 2,
+          "d_b_e": [
+            36,
+            25,
+            4
+          ],
+          "samples": 1024,
+          "analytic_mean_squared_hs_error": 0.03262162162162162,
+          "observed_mean_squared_hs_error": 0.03260316228126896,
+          "sampling_standard_error": 0.00019196061082565487,
+          "observed_mean_trace_error": 0.43305545325284134,
+          "analytic_trace_error_upper_bound": 0.565685424949238,
+          "passed": true
+        }
+      ],
+      "scope": "Monte Carlo consistency of the exact Haar identity; sampling does not prove it."
+    },
+    "reference_stable_expurgation": {
+      "passed": true,
+      "input_dimension": 8,
+      "subcode_dimension": 4,
+      "entanglement_fidelity": 0.9802519503769841,
+      "complex_environment_vector": [
+        [
+          0.932207521655711,
+          0.36156895666874744
+        ],
+        [
+          -0.015193221543685475,
+          0.005117827773083061
+        ]
+      ],
+      "hs_identity_absolute_error": 1.3600232051658168e-15,
+      "trace_preserving_entry_error": 6.952433221959954e-18,
+      "subcode_stinespring_operator_error": 0.13945099958215235,
+      "proven_operator_error_upper_bound": 0.2810555078486519,
+      "induced_diamond_error_upper_bound": 0.2789019991643047,
+      "scope": "Finite channel with nonreal Kraus traces checks conjugations and half-dimension estimate."
+    },
+    "stopped_walk_bernstein_tail": {
+      "passed": true,
+      "maximum_positive_excess": 0.0,
+      "examples": [
+        {
+          "radius": 2,
+          "gamma_t": 0.1,
+          "absorbing_generator_exit_probability": 0.008775767580292526,
+          "bernstein_upper_bound": 0.1989811609897169
+        },
+        {
+          "radius": 2,
+          "gamma_t": 0.5,
+          "absorbing_generator_exit_probability": 0.13694251521966194,
+          "bernstein_upper_bound": 0.602388423824404
+        },
+        {
+          "radius": 2,
+          "gamma_t": 2.0,
+          "absorbing_generator_exit_probability": 0.6261669742599308,
+          "bernstein_upper_bound": 1.0
+        },
+        {
+          "radius": 2,
+          "gamma_t": 8.0,
+          "absorbing_generator_exit_probability": 0.9888694877954814,
+          "bernstein_upper_bound": 1.0
+        },
+        {
+          "radius": 2,
+          "gamma_t": 20.0,
+          "absorbing_generator_exit_probability": 0.9999901447115273,
+          "bernstein_upper_bound": 1.0
+        },
+        {
+          "radius": 3,
+          "gamma_t": 0.1,
+          "absorbing_generator_exit_probability": 0.00028754402194719475,
+          "bernstein_upper_bound": 0.047035491712018214
+        },
+        {
+          "radius": 3,
+          "gamma_t": 0.5,
+          "absorbing_generator_exit_probability": 0.02077339580688531,
+          "bernstein_upper_bound": 0.21079844912372867
+        },
+        {
+          "radius": 3,
+          "gamma_t": 2.0,
+          "absorbing_generator_exit_probability": 0.2781257457045633,
+          "bernstein_upper_bound": 0.8131393194811982
+        },
+        {
+          "radius": 3,
+          "gamma_t": 8.0,
+          "absorbing_generator_exit_probability": 0.854160443322697,
+          "bernstein_upper_bound": 1.0
+        },
+        {
+          "radius": 3,
+          "gamma_t": 20.0,
+          "absorbing_generator_exit_probability": 0.9941460477078761,
+          "bernstein_upper_bound": 1.0
+        },
+        {
+          "radius": 5,
+          "gamma_t": 0.1,
+          "absorbing_generator_exit_probability": 1.41303603595766e-07,
+          "bernstein_upper_bound": 0.002470631752337783
+        },
+        {
+          "radius": 5,
+          "gamma_t": 0.5,
+          "absorbing_generator_exit_probability": 0.00023533228816119411,
+          "bernstein_upper_bound": 0.01841936320793628
+        },
+        {
+          "radius": 5,
+          "gamma_t": 2.0,
+          "absorbing_generator_exit_probability": 0.03374076396899961,
+          "bernstein_upper_bound": 0.22030657666837708
+        },
+        {
+          "radius": 5,
+          "gamma_t": 8.0,
+          "absorbing_generator_exit_probability": 0.42347327002835344,
+          "bernstein_upper_bound": 0.9857031947173965
+        },
+        {
+          "radius": 5,
+          "gamma_t": 20.0,
+          "absorbing_generator_exit_probability": 0.821728458656779,
+          "bernstein_upper_bound": 1.0
+        },
+        {
+          "radius": 9,
+          "gamma_t": 0.1,
+          "absorbing_generator_exit_probability": 5.88418203051333e-15,
+          "bernstein_upper_bound": 6.375150754465751e-06
+        },
+        {
+          "radius": 9,
+          "gamma_t": 0.5,
+          "absorbing_generator_exit_probability": 4.484478233202083e-09,
+          "bernstein_upper_bound": 8.013059478590214e-05
+        },
+        {
+          "radius": 9,
+          "gamma_t": 2.0,
+          "absorbing_generator_exit_probability": 0.00011237339152836423,
+          "bernstein_upper_bound": 0.00614223187598874
+        },
+        {
+          "radius": 9,
+          "gamma_t": 8.0,
+          "absorbing_generator_exit_probability": 0.05187861378460212,
+          "bernstein_upper_bound": 0.23729960815441364
+        },
+        {
+          "radius": 9,
+          "gamma_t": 20.0,
+          "absorbing_generator_exit_probability": 0.31029644598214856,
+          "bernstein_upper_bound": 0.7798035230486818
+        },
+        {
+          "radius": 12,
+          "gamma_t": 0.1,
+          "absorbing_generator_exit_probability": 0.0,
+          "bernstein_upper_bound": 7.17764102951409e-08
+        },
+        {
+          "radius": 12,
+          "gamma_t": 0.5,
+          "absorbing_generator_exit_probability": 4.1155967522854553e-13,
+          "bernstein_upper_bound": 1.1147807385389191e-06
+        },
+        {
+          "radius": 12,
+          "gamma_t": 2.0,
+          "absorbing_generator_exit_probability": 5.732254345636179e-07,
+          "bernstein_upper_bound": 0.0002468196081733591
+        },
+        {
+          "radius": 12,
+          "gamma_t": 8.0,
+          "absorbing_generator_exit_probability": 0.006489443389472327,
+          "bernstein_upper_bound": 0.05464744489458512
+        },
+        {
+          "radius": 12,
+          "gamma_t": 20.0,
+          "absorbing_generator_exit_probability": 0.11691476302777282,
+          "bernstein_upper_bound": 0.3893734166630203
+        }
+      ],
+      "scope": "Exact finite absorbing walk generator; rate one per direction."
+    },
+    "finite_bound_arithmetic": {
+      "passed": true,
+      "examples": [
+        {
+          "N": 1048576,
+          "gamma_t": 1048576.0,
+          "target_half_diamond_error": 0.05,
+          "radius": 8761,
+          "L": 70088,
+          "k": 52566,
+          "blocks": 14,
+          "logical_qubit_lower_bound_after_expurgation": 0,
+          "stationary_baseline_qubits": 20,
+          "log_bad_event_upper_bound": -3.7183085662315136,
+          "bad_event_bound_at_most_half_error": true
+        },
+        {
+          "N": 268435456,
+          "gamma_t": 268435456.0,
+          "target_half_diamond_error": 0.05,
+          "radius": 159843,
+          "L": 1278744,
+          "k": 959058,
+          "blocks": 209,
+          "logical_qubit_lower_bound_after_expurgation": 304,
+          "stationary_baseline_qubits": 28,
+          "log_bad_event_upper_bound": -3.6914617078563197,
+          "bad_event_bound_at_most_half_error": true
+        },
+        {
+          "N": 68719476736,
+          "gamma_t": 68719476736.0,
+          "target_half_diamond_error": 0.05,
+          "radius": 2839674,
+          "L": 22717392,
+          "k": 17038044,
+          "blocks": 3024,
+          "logical_qubit_lower_bound_after_expurgation": 4766,
+          "stationary_baseline_qubits": 36,
+          "log_bad_event_upper_bound": -3.689098162503196,
+          "bad_event_bound_at_most_half_error": true
+        },
+        {
+          "N": 17592186044416,
+          "gamma_t": 17592186044416.0,
+          "target_half_diamond_error": 0.05,
+          "radius": 49542906,
+          "L": 396343248,
+          "k": 297257436,
+          "blocks": 44386,
+          "logical_qubit_lower_bound_after_expurgation": 70323,
+          "stationary_baseline_qubits": 44,
+          "log_bad_event_upper_bound": -3.688896792465677,
+          "bad_event_bound_at_most_half_error": true
+        }
+      ],
+      "scope": "Arithmetic illustrations of the finite theorem, not simulated large memories or an asymptotic proof."
+    }
+  },
+  "limits": [
+    "Finite checks support only their stated examples.",
+    "They do not prove asymptotics, coding existence or prior-work novelty.",
+    "They do not simulate an efficient encoder or decoder or additional physical noise."
+  ]
+}
