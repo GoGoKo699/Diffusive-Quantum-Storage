@@ -42,7 +42,7 @@ Lacoin's [Theorem 2.2](https://arxiv.org/html/1309.3873v3) concerns this **path*
 \frac{2\pi^2\gamma\,T_{\mathrm{mix},N}(\delta)}
      {N^2\ln N}
 =1,
-\qquad 0<\delta<1,
+\qquad 0\lt \delta\lt 1,
 ```
 
 where $`T_{\mathrm{mix},N}(\delta)=\inf\{t:d_N(t)\le\delta\}`$. The error level $`\delta`$ is fixed in this limit. No bound uniform in an arbitrarily varying $`\delta_N`$ is inferred from this theorem.
@@ -131,7 +131,7 @@ F_e(\mathcal D\mathcal E_{N,t}\mathcal A)
 }
 ```
 
-In particular, if $`F_e\ge1-\varepsilon`$ and $`d_N(t)<1-\varepsilon`$, then
+In particular, if $`F_e\ge1-\varepsilon`$ and $`d_N(t)\lt 1-\varepsilon`$, then
 
 ```math
 \boxed{
@@ -152,7 +152,7 @@ The same bound holds for the stronger complete-channel storage criterion
 
 because that criterion implies $`F_e\ge1-\varepsilon`$. The converse therefore applies to both entanglement transmission at the stated overlap fidelity and half-diamond storage error.
 
-Fix $`0<\varepsilon<1`$ and $`a>0`$. At times
+Fix $`0\lt \varepsilon\lt 1`$ and $`a\gt 0`$. At times
 
 ```math
 t_N\ge
@@ -167,11 +167,11 @@ Lacoin's theorem gives $`d_N(t_N)\to0`$, and hence
 \log_2(N+1)-\log_2(1-\varepsilon)+o(1).
 ```
 
-For a finite statement, choose a fixed $`0<\delta<1-\varepsilon`$ and assume $`d_N(t)\le\delta`$. Then the right-hand side is simply $`\log_2[(N+1)/(1-\varepsilon-\delta)]`$.
+For a finite statement, choose a fixed $`0\lt \delta\lt 1-\varepsilon`$ and assume $`d_N(t)\le\delta`$. Then the right-hand side is simply $`\log_2[(N+1)/(1-\varepsilon-\delta)]`$.
 
 ## What this comparison establishes
 
-The bound shows that a fully mixed set of positional labels leaves only order $`\log N`$ coherent qubits at any fixed error. The [finite-time construction](storage_theorem.md) retains a polynomially larger payload at $`t=N^{2-\zeta}/\gamma`$ for every fixed $`0<\zeta<2`$. Together, these statements distinguish the diffusive transient from the stationary symmetry sector.
+The bound shows that a fully mixed set of positional labels leaves only order $`\log N`$ coherent qubits at any fixed error. The [finite-time construction](storage_theorem.md) retains a polynomially larger payload at $`t=N^{2-\zeta}/\gamma`$ for every fixed $`0\lt \zeta\lt 2`$. Together, these statements distinguish the diffusive transient from the stationary symmetry sector.
 
 The upper bound uses **classical** permutation mixing as a sufficient condition for the quantum memory to approach its stationary payload. It does not prove that the quantum storage capacity has a cutoff at the same location, determine its exact finite-time value, or close the logarithmic gap between the construction and this late-time comparison. Exact zero-error collapse at every positive time is an inherited, separate statement; it is not evidence of immediate failure at a fixed nonzero error.
 

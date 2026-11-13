@@ -24,7 +24,7 @@ At fixed small error, the construction supplies an achievable payload of order
 \frac{N}{\sqrt{\gamma t\ln N}+\ln N},
 ```
 
-with explicit additive coding overhead in the [finite-size theorem](storage_theorem.md). In particular, at $`\gamma t=N`$ it supplies $`\Omega(\sqrt{N/\ln N})`$ logical qubits asymptotically. At $`\gamma t=N^{2-\zeta}`$ for fixed $`0<\zeta<2`$, it still supplies $`\Omega(N^{\zeta/2}/\sqrt{\ln N})`$ qubits. These payloads grow polynomially, while the exact symmetric-space baseline grows logarithmically.
+with explicit additive coding overhead in the [finite-size theorem](storage_theorem.md). In particular, at $`\gamma t=N`$ it supplies $`\Omega(\sqrt{N/\ln N})`$ logical qubits asymptotically. At $`\gamma t=N^{2-\zeta}`$ for fixed $`0\lt \zeta\lt 2`$, it still supplies $`\Omega(N^{\zeta/2}/\sqrt{\ln N})`$ qubits. These payloads grow polynomially, while the exact symmetric-space baseline grows logarithmically.
 
 Classical path-shuffle mixing and Schur-Weyl structure give the complementary [late-time bound](late_time.md): by times of order $`N^2\ln N/\gamma`$, any fixed-small-error one-shot code has only $`O(\log N)`$ logical qubits. Those ingredients are inherited and are not a new quantum cutoff theorem.
 
@@ -32,7 +32,7 @@ This leaves a substantial intermediate storage interval that the stationary symm
 
 ## A quantified lifetime statement
 
-For a fixed $`A>1`$, consider the last time at which a code can retain at least $`A\log_2 N`$ logical qubits, with a fixed $`0<\epsilon<1/8`$. The finite-time construction and inherited late-time upper imply constants $`c_{A,\epsilon},C_\epsilon>0`$ such that, for sufficiently large $`N`$,
+For a fixed $`A\gt 1`$, consider the last time at which a code can retain at least $`A\log_2 N`$ logical qubits, with a fixed $`0\lt \epsilon\lt 1/8`$. The finite-time construction and inherited late-time upper imply constants $`c_{A,\epsilon},C_\epsilon\gt 0`$ such that, for sufficiently large $`N`$,
 
 ```math
 c_{A,\epsilon}\frac{N^2}{\gamma(\ln N)^3}

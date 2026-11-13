@@ -4,7 +4,7 @@
 
 ## A path with unrecorded local exchanges
 
-There are $`N\ge1`$ addressable qubit sites on an open path. Let $`S_i`$ swap sites $`i`$ and $`i+1`$. Each edge has an independent homogeneous Poisson clock of rate $`\gamma>0`$. A clock ring applies that SWAP. There is no additional coherent Hamiltonian or other noise. The averaged storage channel is
+There are $`N\ge1`$ addressable qubit sites on an open path. Let $`S_i`$ swap sites $`i`$ and $`i+1`$. Each edge has an independent homogeneous Poisson clock of rate $`\gamma\gt 0`$. A clock ring applies that SWAP. There is no additional coherent Hamiltonian or other noise. The averaged storage channel is
 
 ```math
 \mathcal E_{N,t}=e^{t\mathcal L_N},\qquad
@@ -48,7 +48,7 @@ m_\epsilon(N,t)
 \text{ for some endpoint code}\right\}.
 ```
 
-This is a finite-time, one-use storage quantity. No repeated-channel capacity limit is part of its definition. The theorem uses $`0<\epsilon<1/8`$.
+This is a finite-time, one-use storage quantity. No repeated-channel capacity limit is part of its definition. The theorem uses $`0\lt \epsilon\lt 1/8`$.
 
 For comparison, the entanglement fidelity of a code is
 

@@ -18,8 +18,8 @@ in the asymptotic regime, with explicit finite-size constants and integer roundi
 | Storage regime | Supported payload |
 |---|---|
 | $`\gamma t=N`$ | Achievable $`\Omega(\sqrt{N/\ln N})`$ logical qubits at fixed small error |
-| $`\gamma t=N^{2-\zeta}`$, fixed $`0<\zeta<2`$ | Achievable $`\Omega(N^{\zeta/2}/\sqrt{\ln N})`$ logical qubits |
-| $`\gamma t\ge(1+a)N^2\ln N/(2\pi^2)`$, fixed $`a>0`$, asymptotically | Inherited mixing tools give an all-code $`O(\log N)`$ late-time upper bound |
+| $`\gamma t=N^{2-\zeta}`$, fixed $`0\lt \zeta\lt 2`$ | Achievable $`\Omega(N^{\zeta/2}/\sqrt{\ln N})`$ logical qubits |
+| $`\gamma t\ge(1+a)N^2\ln N/(2\pi^2)`$, fixed $`a\gt 0`$, asymptotically | Inherited mixing tools give an all-code $`O(\log N)`$ late-time upper bound |
 
 The first two rows are achievable bounds. They do not give the optimal payload at every time. The late-time comparison uses established adjacent-shuffle mixing and Schur-Weyl symmetry; it does not assert a quantum-capacity cutoff.
 
@@ -34,6 +34,12 @@ The favorable event is used only in the proof. The protocol receives no particle
 Start with the [model and resources](science/model.md), then the [finite-time theorem](science/storage_theorem.md). The [scientific index](science/README.md) connects the guard argument, one-shot coding, late-time comparison and physical interpretation. [Related work](references/RELATED_WORK.md) separates the new finite-time construction from established exchange-error correction, symmetric loss, consensus and mixing results.
 
 All $`N`$ stored spins, including guards and unused sites, are counted. Endpoint gates, transient width and runtime are unoptimized. The present theorem covers the specified SWAP noise; generic additional local noise needs a separate analysis. An efficient encoder or decoder is not supplied.
+
+## Learn the project
+
+The single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**. Start with the [worked block example](learning/WORKED_EXAMPLES.md), use the [Watrous bridge](learning/WATROUS_BRIDGE.md) for source sections and notation, then follow the [30-milestone map](learning/MILESTONES.md): 12 background targets and 18 targets connecting the guarded construction to its full consequence. The [learning route](learning/README.md) joins these entry points.
+
+The bridge distinguishes the book's fidelity and Choi conventions from the normalized states and half-diamond error used here. The project supplies the local diffusion and finite-size coding steps beyond the textbook foundations.
 
 ## Reproduce the finite checks
 

@@ -60,7 +60,7 @@ The [late-time argument](../science/late_time.md) combines that theorem with a c
 
 ## The consequential remainder
 
-The supported addition is the reference-stable guarded-block reduction and its finite-size coding consequence: for every fixed $`0<\zeta<2`$, a polynomially growing logical register can survive until $`t=N^{2-\zeta}/\gamma`$ at fixed small error, without operations during storage. The known stationary payload remains only order $`\log N`$.
+The supported addition is the reference-stable guarded-block reduction and its finite-size coding consequence: for every fixed $`0\lt \zeta\lt 2`$, a polynomially growing logical register can survive until $`t=N^{2-\zeta}/\gamma`$ at fixed small error, without operations during storage. The known stationary payload remains only order $`\log N`$.
 
 This is a statement about information-theoretic storage under the specified exchange noise. It does not establish the optimal finite-time payload, an efficient endpoint circuit, a general passive memory against additional local noise, or an experimental advantage. See the [model](../science/model.md), [main theorem](../science/storage_theorem.md), and [limitations](../science/interpretation.md).
 

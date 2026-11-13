@@ -14,3 +14,9 @@ Finite-time, one-use quantum storage under unobserved nearest-neighbor Poisson S
 - Reproducible finite checks and their limits: verification/README.md
 
 The guarded finite-time growing-payload code is the contribution. Symmetric-loss geometry, random coding, exact symmetry protection and classical mixing are inherited tools. Do not infer matching capacity scaling, efficient circuits, a quantum cutoff profile or generic-noise robustness from the achievable lower bound.
+
+Learning route (single anchor: Watrous2018):
+- learning/README.md: entry points
+- learning/WATROUS_BRIDGE.md: verified source sections and notation translation
+- learning/MILESTONES.md: exactly30project-defined targets (12background,18narrative)
+- learning/WORKED_EXAMPLES.md: reference-entangled block, unconditional error and finite overhead
