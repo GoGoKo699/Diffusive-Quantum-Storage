@@ -30,7 +30,7 @@ The classical distance that will enter the quantum bound is
 
 ```math
 d_N(t)
-=\|\mu_{N,t}-u_N\|_{\mathrm{TV}}
+=\lVert\mu_{N,t}-u_N\rVert_{\mathrm{TV}}
 =\frac12\sum_{\pi\in S_N}
 \left|\mu_{N,t}(\pi)-\frac1{N!}\right|.
 ```
@@ -52,7 +52,7 @@ where $`T_{\mathrm{mix},N}(\delta)=\inf\{t:d_N(t)\le\delta\}`$. The error level 
 The triangle inequality and the unit diamond norm of a unitary channel give
 
 ```math
-\frac12\|\mathcal E_{N,t}-\mathcal P_N\|_\diamond
+\frac12\lVert\mathcal E_{N,t}-\mathcal P_N\rVert_\diamond
 \le
 \frac12\sum_{\pi\in S_N}
 \left|\mu_{N,t}(\pi)-\frac1{N!}\right|
@@ -101,7 +101,7 @@ Here $`V_j`$ is a spin representation and $`M_j`$ is its permutation multiplicit
 \mathcal P_N(\rho)
 =
 \bigoplus_j
-\operatorname{Tr}_{M_j}(P_j\rho P_j)
+\mathrm{Tr}_{M_j}(P_j\rho P_j)
 \otimes\frac{I_{M_j}}{\dim M_j}.
 ```
 
@@ -146,7 +146,7 @@ The same bound holds for the stronger complete-channel storage criterion
 
 ```math
 \frac12
-\|\mathcal D\circ\mathcal E_{N,t}\circ\mathcal A-\mathrm{id}_K\|_\diamond
+\lVert\mathcal D\circ\mathcal E_{N,t}\circ\mathcal A-\mathrm{id}_K\rVert_\diamond
 \le\varepsilon,
 ```
 

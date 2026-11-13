@@ -33,7 +33,7 @@ Write $`\mathcal T=\Phi_{L\to k}^{\otimes B}`$ and let $`\mathcal N`$ be its com
 If $`\omega_{RE}`$ is the normalized Choi state of $`\mathcal N`$, purification of the Stinespring-Choi state gives
 
 ```math
-\operatorname{Tr}\omega_{RE}^2=\frac1b.
+\mathrm{Tr}\omega_{RE}^2=\frac1b.
 ```
 
 Indeed, its complementary receiver marginal is $`I_B/b`$, so its nonzero spectrum is flat of rank $`b`$.
@@ -48,7 +48,7 @@ F_e\!\left(\frac{I_K}{K},
 \ge 1-\sqrt{\frac{Ke}{b}}.
 ```
 
-Here $`F_e`$ is the overlap of the recovered reference/output state with the normalized maximally entangled $`K`$-state, and $`\mathcal V`$ is an isometric encoder. This is a specialization of Klesse's finite-size random-code theorem, [Phys. Rev. A 75, 062315 (2007)](https://doi.org/10.1103/PhysRevA.75.062315), Sec. IV B, Eqs. (28) and (30). The receiver channel has Kraus rank at most $`e`$, and $`\|\mathcal T(\pi_A)\|_2=1/\sqrt b`$.
+Here $`F_e`$ is the overlap of the recovered reference/output state with the normalized maximally entangled $`K`$-state, and $`\mathcal V`$ is an isometric encoder. This is a specialization of Klesse's finite-size random-code theorem, [Phys. Rev. A 75, 062315 (2007)](https://doi.org/10.1103/PhysRevA.75.062315), Sec. IV B, Eqs. (28) and (30). The receiver channel has Kraus rank at most $`e`$, and $`\lVert\mathcal T(\pi_A)\rVert_2=1/\sqrt b`$.
 
 For completeness, the following direct Haar calculation proves the needed specialization and makes its dimension dependence explicit.
 
@@ -64,7 +64,7 @@ Choose the first $`K`$ columns $`|u_a\rangle`$ of a Haar unitary on the $`d`$-di
 The two Haar contractions needed for its purity are
 
 ```math
-A:=\mathbb E\operatorname{Tr}
+A:=\mathbb E\mathrm{Tr}
 \mathcal N(|u_a\rangle\langle u_a|)^2
 =\frac{d}{d+1}\left(\frac1e+\frac1b\right),
 ```
@@ -72,7 +72,7 @@ A:=\mathbb E\operatorname{Tr}
 and, for $`a\ne c`$,
 
 ```math
-C:=\mathbb E\operatorname{Tr}\!\left[
+C:=\mathbb E\mathrm{Tr}\!\left[
 \mathcal N(|u_a\rangle\langle u_c|)
 \mathcal N(|u_c\rangle\langle u_a|)\right]
 =\frac{d^2/b-d/e}{d^2-1}.
@@ -81,15 +81,15 @@ C:=\mathbb E\operatorname{Tr}\!\left[
 These follow respectively from the Haar averages $`(I+F)/[d(d+1)]`$ and $`(F-I/d)/(d^2-1)`$. Therefore
 
 ```math
-\mathbb E\operatorname{Tr}\sigma_{RE}^2
+\mathbb E\mathrm{Tr}\sigma_{RE}^2
 =\frac AK+\frac{K-1}{K}C,
 ```
 
 which gives the exact identity
 
 ```math
-\mathbb E\left\|\sigma_{RE}
--\frac{I_R}{K}\otimes\frac{I_E}{e}\right\|_2^2
+\mathbb E\left\lVert\sigma_{RE}
+-\frac{I_R}{K}\otimes\frac{I_E}{e}\right\rVert_2^2
 =\frac{Kd-1}{K(d^2-1)}
 \left(\frac db-\frac1e\right).
 ```
@@ -98,8 +98,8 @@ Cauchy-Schwarz on the $`Ke`$-dimensional reference/environment space and Jensen'
 
 ```math
 \begin{aligned}
-\mathbb E\left\|\sigma_{RE}
--\frac{I_R}{K}\otimes\frac{I_E}{e}\right\|_1
+\mathbb E\left\lVert\sigma_{RE}
+-\frac{I_R}{K}\otimes\frac{I_E}{e}\right\rVert_1
 &\le
 \sqrt{\frac{Kd-1}{d^2-1}
 \left(\frac{de}{b}-1\right)}\\
@@ -130,7 +130,7 @@ F_e(I_K/K,\mathcal M)\ge1-\eta.
 Take a Stinespring isometry $`W=\sum_j A_j\otimes|j\rangle`$ for $`\mathcal M`$. Define
 
 ```math
-a_j=\frac{\operatorname{Tr}A_j}{K},
+a_j=\frac{\mathrm{Tr}A_j}{K},
 \qquad
 F=\sum_j|a_j|^2=F_e(I_K/K,\mathcal M),
 \qquad
@@ -147,14 +147,14 @@ H=(W-I_K\otimes|v\rangle)^\dagger
 satisfies
 
 ```math
-\operatorname{Tr}H
+\mathrm{Tr}H
 =2K(1-\sqrt F)\le2K\eta.
 ```
 
 Let $`P`$ project onto the lowest $`K/2`$ eigenvectors of $`H`$. At least $`K/2`$ eigenvalues are no larger than $`4\eta`$, so
 
 ```math
-\|(W-I_K\otimes|v\rangle)P\|_\infty
+\lVert(W-I_K\otimes|v\rangle)P\rVert_\infty
 \le2\sqrt\eta.
 ```
 
@@ -163,14 +163,14 @@ This is an operator-norm bound and is unchanged by tensoring an arbitrary refere
 ```math
 \mathcal C_J(X)
 =J^\dagger XJ+
-\operatorname{Tr}[(I-P)X]\,|0\rangle\langle0|.
+\mathrm{Tr}[(I-P)X]\,|0\rangle\langle0|.
 ```
 
 It fixes the ideal subcode and cannot increase diamond distance. The resulting $`K/2`$-dimensional code obeys
 
 ```math
-\frac12\|\mathcal C_J\circ\mathcal M\circ
-(J\,\cdot\,J^\dagger)-\operatorname{id}_{K/2}\|_\diamond
+\frac12\lVert\mathcal C_J\circ\mathcal M\circ
+(J\,\cdot\,J^\dagger)-\mathrm{id}_{K/2}\rVert_\diamond
 \le2\sqrt\eta.
 ```
 
@@ -181,9 +181,9 @@ This bound includes arbitrary input entanglement with an external reference. The
 The [guarded reduction](guarded_blocks.md) gives half-diamond distance at most $`p_{\mathrm{bad}}`$ between the physical encoded/trimmed channel and the ideal product-loss channel. Compose both with the selected encoder, recovery, and subcode compression. The triangle inequality proves
 
 ```math
-\frac12\|\mathcal D_{\mathrm{phys}}\circ
+\frac12\lVert\mathcal D_{\mathrm{phys}}\circ
 \mathcal E_{N,t}\circ\mathcal V_{\mathrm{phys}}
--\operatorname{id}_{K/2}\|_\diamond
+-\mathrm{id}_{K/2}\rVert_\diamond
 \le p_{\mathrm{bad}}+2\sqrt\eta.
 ```
 

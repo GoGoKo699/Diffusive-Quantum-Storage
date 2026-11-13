@@ -282,7 +282,7 @@ The milestones are common understanding targets. Dependencies refer only to earl
 
 **Central question:** How does the dimension ratio produce an actual one-use coding guarantee?
 
-**Understanding target:** Explain the Haar second-moment bound $`\mathbb E\|\sigma_{RE}-\pi_R\otimes\pi_E\|_1\le\sqrt{Ke/b}`$ and the existence of a code with entanglement infidelity at most $`\eta`$ when $`K\le\eta^2b/e`$. Retain its finite-size character when block length grows.
+**Understanding target:** Explain the Haar second-moment bound $`\mathbb E\lVert\sigma_{RE}-\pi_R\otimes\pi_E\rVert_1\le\sqrt{Ke/b}`$ and the existence of a code with entanglement infidelity at most $`\eta`$ when $`K\le\eta^2b/e`$. Retain its finite-size character when block length grows.
 
 **Dependencies and story role:** M10, M11, M19. Turns the reduced channel's geometry into a recoverable logical dimension.
 

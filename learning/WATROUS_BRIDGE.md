@@ -28,18 +28,18 @@ Chapter 8 explains a broader asymptotic setting. The present theorem instead con
 | A channel's dilation with an auxiliary output | $`W:A\to B\otimes E`$ | Tracing $`E`$ gives the receiver channel; tracing $`B`$ defines the complementary channel used here |
 | Choi operator $`J(\mathcal N)`$ | Normalized Choi state $`\omega_{RE}`$ | Divide by input dimension $`d`$ and account for the order of the reference and output factors |
 | Fidelity $`F(\rho,\sigma)`$ | Overlap entanglement fidelity $`F_e`$ | The repository's $`F_e`$ is the square of the book's fidelity when one argument is the target pure maximally entangled state |
-| Completely bounded trace norm, written with triple bars and subscript one | $`\|\mathcal M\|_\diamond`$ | The project error is half this norm applied to the recovered channel minus the identity |
-| Permutation-invariant vectors | $`V_L=\operatorname{Sym}^{L}(\mathbb C^2)`$ | Every permutation inside a block acts as the identity on this input space |
+| Completely bounded trace norm, written with triple bars and subscript one | $`\lVert\mathcal M\rVert_\diamond`$ | The project error is half this norm applied to the recovered channel minus the identity |
+| Permutation-invariant vectors | $`V_L=\mathrm{Sym}^{L}(\mathbb C^2)`$ | Every permutation inside a block acts as the identity on this input space |
 | Haar averaging | A random $`K`$-dimensional subspace of $`V_L^{\otimes B}`$ | Here $`B`$ counts blocks; $`d,b,e`$ denote the input, retained, and discarded dimensions in the coding proof |
 
 Two normalizations are especially useful to keep visible. With the normalized maximally entangled projector $`\Phi_K`$ and recovered state $`\rho_{R\widehat A}`$,
 
 ```math
-F_e=\operatorname{Tr}(\Phi_K\rho_{R\widehat A})
+F_e=\mathrm{Tr}(\Phi_K\rho_{R\widehat A})
 =F(\Phi_K,\rho_{R\widehat A})^2,
 \qquad
-\operatorname{err}(\Lambda)
-=\frac12\|\Lambda-\operatorname{id}_K\|_\diamond.
+\mathrm{err}(\Lambda)
+=\frac12\lVert\Lambda-\mathrm{id}_K\rVert_\diamond.
 ```
 
 The book's Choi ordering is output followed by input. For a complementary channel $`\mathcal N:A\to E`$ with $`\dim A=d`$, the project convention is

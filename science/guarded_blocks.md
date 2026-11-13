@@ -9,7 +9,7 @@ The noise moves quantum carriers without revealing their trajectories. This page
 Partition the first $`BL`$ sites of the path into $`B=\lfloor N/L\rfloor`$ consecutive blocks of length $`L`$. Initialize any remaining sites in a fixed state. Let
 
 ```math
-V_L=\operatorname{Sym}^{L}(\mathbb C^2),
+V_L=\mathrm{Sym}^{L}(\mathbb C^2),
 \qquad \dim V_L=L+1.
 ```
 
@@ -109,8 +109,8 @@ where $`\Xi`$ is a channel on the same input and physical output spaces. If the 
 It follows that
 
 ```math
-\frac12\left\|\mathcal A_t-
-\Phi_{L\to k}^{\otimes B}\right\|_\diamond
+\frac12\left\lVert\mathcal A_t-
+\Phi_{L\to k}^{\otimes B}\right\rVert_\diamond
 \le p_{\mathrm{bad}}.
 ```
 

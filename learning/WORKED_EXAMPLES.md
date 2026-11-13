@@ -128,7 +128,7 @@ The event depends only on classical clock histories, independently of the quantu
 \mathcal A_t=(1-p_{\mathrm{bad}})\Phi_{L\to k}^{\otimes B}
              +p_{\mathrm{bad}}\,\Xi,
 \qquad
-\frac12\|\mathcal A_t-\Phi_{L\to k}^{\otimes B}\|_\diamond
+\frac12\lVert\mathcal A_t-\Phi_{L\to k}^{\otimes B}\rVert_\diamond
 \le p_{\mathrm{bad}},
 ```
 
@@ -143,7 +143,7 @@ p_{\mathrm{bad}}
 The same decoder acts on all runs. This mixture is a proof decomposition, with no postselection, observed success flag or trajectory-dependent recovery. Contraction and the triangle inequality add the physical error to the ideal code error:
 
 ```math
-\operatorname{err}_{\mathrm{physical}}
+\mathrm{err}_{\mathrm{physical}}
 \le p_{\mathrm{bad}}+2\sqrt\eta.
 ```
 
