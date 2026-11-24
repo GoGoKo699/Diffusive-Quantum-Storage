@@ -1,54 +1,49 @@
 # Diffusive Quantum Storage
 
-**Local random swaps can erase position labels while leaving a growing quantum memory available for long times.**
+**How much quantum information can a spin chain store while neighboring carriers exchange places?**
 
-Consider $`N`$ qubits on a path, with an unobserved rate-$`\gamma`$ SWAP clock on every adjacent edge. Encoding takes place before storage and decoding afterwards. No control, reset, measurement or protected auxiliary memory acts during storage.
+Consider $`N`$ qubits on an open path. Independent rate-$`\gamma`$ SWAP clocks exchange adjacent spins. Encoding and decoding occur at the endpoints of the storage interval. During storage, the chain evolves without intervention or an accessible record of the swaps.
 
-Guarded symmetric blocks give a finite-time, one-use code with an error guarantee that includes arbitrary entanglement with an external reference. At fixed small error, its achievable logical payload satisfies
+At fixed half-diamond error $`0\lt\epsilon\lt1/8`$, a deterministic endpoint code gives
 
 ```math
-m_\epsilon(N,t)
-\ge c\frac{N}{\sqrt{\gamma t\ln N}+\ln N}-C_\epsilon,
+m_\epsilon(N,t)\ge c_\epsilon\frac{N}{1+\sqrt{\gamma t}}-C,
 ```
 
-in the asymptotic regime, with explicit finite-size constants and integer rounding in the [storage theorem](science/storage_theorem.md). The independent exact symmetric-space code retains $`\lfloor\log_2(N+1)\rfloor`$ qubits at every time.
+with a positive error-dependent constant and an absolute additive constant. This is a one-use guarantee for arbitrary inputs entangled with a reference. The [finite-size theorem](science/mean_label_escape.md) gives explicit constants and block counts.
 
-## What this enables
+## Storage regimes
 
 | Storage regime | Supported payload |
 |---|---|
-| $`\gamma t=N`$ | Achievable $`\Omega(\sqrt{N/\ln N})`$ logical qubits at fixed small error |
-| $`\gamma t=N^{2-\zeta}`$, fixed $`0\lt \zeta\lt 2`$ | Achievable $`\Omega(N^{\zeta/2}/\sqrt{\ln N})`$ logical qubits |
-| $`\gamma t\ge(1+a)N^2\ln N/(2\pi^2)`$, fixed $`a\gt 0`$, asymptotically | Inherited mixing tools give an all-code $`O(\log N)`$ late-time upper bound |
+| Fixed $`\gamma t`$ | Achievable payload grows linearly with $`N`$ at fixed error |
+| $`\gamma t=N`$ | Achievable $`\Omega_\epsilon(\sqrt N)`$ logical qubits |
+| $`\gamma t=N^{2-\zeta}`$, fixed $`0\lt\zeta\lt2`$ | Achievable $`\Omega_\epsilon(N^{\zeta/2})`$ logical qubits |
+| $`\gamma t\ge(1+a)N^2\ln N/(2\pi^2)`$, fixed $`a\gt0`$, asymptotically | Inherited all-code upper bound $`O(\log N)`$ |
 
-The first two rows are achievable bounds. They do not give the optimal payload at every time. The late-time comparison uses established adjacent-shuffle mixing and Schur-Weyl symmetry; it does not assert a quantum-capacity cutoff.
+The [exact symmetric-space code](science/model.md#exact-all-time-baseline) stores $`\lfloor\log_2(N+1)\rfloor`$ qubits at every time. The [late-time bound](science/late_time.md) follows from classical adjacent-shuffle mixing and Schur–Weyl symmetry. The optimal intermediate-time payload remains open.
 
-## Why guards help
+## How the code works
 
-Each input block lies in its fully symmetric spin space, so its internal permutations are harmless. At decoding, only its central core is retained. If every retained output site originated inside its own block, the full channel on all cores is exactly a product of symmetric partial traces, including reference correlations. A diffusion bound controls the probability that this condition fails. Finite-size coding across the blocks then recovers the logical input unconditionally.
+Each spatial block uses the all-zero state and an excitation spread uniformly across the block. The root-mean-square displacement of a carrier is at most $`\sqrt{2\gamma t}`$. The mean fraction of carriers that leave their assigned block bounds the average error weight on the corresponding logical qubits. An outer stabilizer code corrects errors of sufficiently small weight, including correlated errors. The Pauli average in the proof selects fixed endpoint operations. The deployed code uses neither a stored key nor a permutation record.
 
-The favorable event is used only in the proof. The protocol receives no particle trajectory, permutation record or success flag.
+The [original guarded construction](science/storage_theorem.md) gives a second finite-size lower bound, based on keeping interior cores. Its proof controls a single event across all the cores. The new code removes the resulting square-root logarithmic loss at polynomial storage times. Either code can be selected from its finite numerical guarantee. All physical spins, including any unused sites, count toward $`N`$. Endpoint circuit size, temporary width and runtime are unoptimized.
 
-## Read the result
-
-Start with the [model and resources](science/model.md), then the [finite-time theorem](science/storage_theorem.md). The [scientific index](science/README.md) connects the guard argument, one-shot coding, late-time comparison and physical interpretation. [Related work](references/RELATED_WORK.md) separates the new finite-time construction from established exchange-error correction, symmetric loss, consensus and mixing results.
-
-All $`N`$ stored spins, including guards and unused sites, are counted. Endpoint gates, transient width and runtime are unoptimized. The present theorem covers the specified SWAP noise; generic additional local noise needs a separate analysis. An efficient encoder or decoder is not supplied.
+Start with the [model](science/model.md), [proofs and interpretation](science/README.md), and [related work](references/RELATED_WORK.md).
 
 ## Learn the project
 
-The single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**. Start with the [worked block example](learning/WORKED_EXAMPLES.md), use the [Watrous bridge](learning/WATROUS_BRIDGE.md) for source sections and notation, then follow the [30-milestone map](learning/MILESTONES.md): 12 background targets and 18 targets connecting the guarded construction to its full consequence. The [learning route](learning/README.md) joins these entry points.
-
-The bridge distinguishes the book's fidelity and Choi conventions from the normalized states and half-diamond error used here. The project supplies the local diffusion and finite-size coding steps beyond the textbook foundations.
+The educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**. The [worked examples](learning/WORKED_EXAMPLES.md), [Watrous bridge](learning/WATROUS_BRIDGE.md), and [30 milestones](learning/MILESTONES.md) connect the two constructions to quantum channels, coding and reference-preserving error.
 
 ## Reproduce the finite checks
 
 ```bash
 python -m pip install -r requirements.txt
 python verification/checks.py
+python verification/check_mean_label_escape.py
 ```
 
-The [verification guide](verification/README.md) explains the exact small-system calculations, random-subspace consistency tests and bound arithmetic. These checks support the proof within their declared scope and do not simulate a large quantum memory.
+The [verification guide](verification/README.md) describes the small-system checks and their scope.
 
 ## Purpose and contact
 

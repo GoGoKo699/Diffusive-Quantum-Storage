@@ -3,7 +3,8 @@
 Finite-time, one-use quantum storage under unobserved nearest-neighbor Poisson SWAPs on a qubit path. No intervention occurs during storage. All physical spins are counted; endpoint complexity is unoptimized.
 
 - Exact model, resources and half-diamond error: science/model.md
-- Finite-size theorem, constants, floors and scaling: science/storage_theorem.md
+- Mean escape code, deterministic endpoints and diffusion-length scaling: science/mean_label_escape.md
+- Alternative guarded finite-size bound: science/storage_theorem.md
 - Favorable-origin channel identity and stopped-walk bounds: science/guarded_blocks.md
 - Symmetric partial trace, Haar coding and subcode recovery: science/one_shot_coding.md
 - Inherited late-time one-shot upper: science/late_time.md
@@ -13,7 +14,7 @@ Finite-time, one-use quantum storage under unobserved nearest-neighbor Poisson S
 - Bibliography: references/references.bib
 - Reproducible finite checks and their limits: verification/README.md
 
-The guarded finite-time growing-payload code is the contribution. Symmetric-loss geometry, random coding, exact symmetry protection and classical mixing are inherited tools. Do not infer matching capacity scaling, efficient circuits, a quantum cutoff profile or generic-noise robustness from the achievable lower bound.
+The mean escape code improves the achievable path payload by converting spatial leakage to correctable correlated errors. The guarded construction remains a separate finite-size bound. Symmetric-loss geometry, random coding, exact symmetry protection and classical mixing are inherited tools. Do not infer matching capacity scaling, efficient circuits, a quantum cutoff profile or generic-noise robustness from the achievable lower bound.
 
 Learning route (single anchor: Watrous2018):
 - learning/README.md: entry points

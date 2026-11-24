@@ -1,6 +1,6 @@
 # Related work and attribution
 
-The contribution is a finite-time achievable quantum-storage bound for **unobserved local exchange** on a path. It uses established quantum gossip dynamics, permutation symmetry, finite-size random coding, and classical interchange estimates. The new step is to retain separated output cores of symmetric input blocks: before labels diffuse across the guards, the complete channel on those cores is exactly a tensor product of symmetric partial traces. This yields a growing coherent payload before global mixing.
+The contribution is a finite-time achievable quantum-storage bound for **unobserved local exchange** on a path. It uses established quantum gossip dynamics, permutation symmetry, finite-size random coding, and classical interchange estimates. The original construction uses separated output cores and an exact product-loss reduction on a favorable event. The newer mean escape construction uses a vacuum and uniform one-excitation encoding and controls correlated error weight by the mean amount of carrier exchange across block boundaries.
 
 The comparison below keeps this result separate from stationary capacity formulas, exact permutation protection, and a classical mixing theorem. Bibliographic records, DOI links, and inspected preprint versions are collected in [references.bib](references.bib).
 
@@ -12,7 +12,7 @@ The comparison below keeps this result separate from stationary capacity formula
 
 The most direct prior capacity comparison is [Bardet, Junge, LaRacuente, Rouzé, and Stilck França, *Group Transference Techniques for the Estimation of the Decoherence Times and Capacities of Quantum Markov Semigroups*](https://doi.org/10.1109/TIT.2021.3065452), IEEE Transactions on Information Theory **67**, 2878--2909 (2021). Sections IV-D and V-F(d) explicitly treat nearest-neighbor random SWAP noise on a cycle, and Section V gives capacity bounds through the invariant algebra and classical convergence estimates. Finite-time capacity analysis of random exchange therefore predates this project.
 
-The additional claim here is the **constructive growing-payload lower bound before spatial mixing**. The invariant-algebra lower bound alone gives the stationary order $`\log N`$ payload; convergence upper bounds do not supply the guarded-block encoding and its polynomial finite-time payload. The present proof uses a path, and its late-time comparison uses a path mixing theorem directly.
+The additional claim here is the **constructive growing-payload lower bound before spatial mixing**. The invariant-algebra lower bound alone gives the stationary order $`\log N`$ payload; convergence upper bounds leave open the deterministic finite-time codes and their diffusion-length payload. The present proof uses a path, and its late-time comparison uses a path mixing theorem directly.
 
 [Novotný, Štěrba, Jex, Kowalski, and Abedi, *Consensus And Information Redistribution In Quantum Networks*](https://arxiv.org/abs/2610.36391v1), arXiv:2610.36391v1 (2026), is a recent comparison concerning asymptotic random-unitary consensus and the recovery of globally encoded observables by cooperating nodes. Recovering selected excitation moments from local measurements is different from preserving an arbitrary reference-entangled logical register with a quantified one-shot error.
 
@@ -58,9 +58,15 @@ The [late-time argument](../science/late_time.md) combines that theorem with a c
 
 [*Quantum Group Memory Laws*](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/tree/0d585db681ebc66fe0f2c7acb75f0c636869beef) derives local symmetry-preserving bond-kick dynamics and its full stationary projection, including the ordinary SWAP endpoint. Its local spin-autocorrelation account and its physical-erasure capacity account are separate observables. The existence of a local stationary realization or a slow correlation does not itself supply a finite-time quantum storage code.
 
-## The consequential remainder
+## Correlated recovery and local exchange
 
-The supported addition is the reference-stable guarded-block reduction and its finite-size coding consequence: for every fixed $`0\lt \zeta\lt 2`$, a polynomially growing logical register can survive until $`t=N^{2-\zeta}/\gamma`$ at fixed small error, without operations during storage. The known stationary payload remains only order $`\log N`$.
+[Inhomogeneous Collective Memory](https://github.com/GoGoKo699/Inhomogeneous-Collective-Memory/blob/b6bbf3cae33b300d0c793628e168616dc4919bdc/science/storage_theorem.md) already uses marginal Bell infidelity, global Pauli averaging, correction below a weight threshold, and fixed-time selection and expurgation for calibrated collective Lindblad couplings. There, each block has autonomous marginal dynamics. Here, input information from other blocks can enter the output block. The new exchange argument bounds its contribution in the marginal Bell test and connects the resulting error weight to one tagged carrier's diffusion.
 
-This is a statement about information-theoretic storage under the specified exchange noise. It does not establish the optimal finite-time payload, an efficient endpoint circuit, a general passive memory against additional local noise, or an experimental advantage. See the [model](../science/model.md), [main theorem](../science/storage_theorem.md), and [limitations](../science/interpretation.md).
+[Calderbank, Rains, Shor and Sloane](https://arxiv.org/abs/quant-ph/9608006) give the stabilizer coding framework and distance existence bounds. [Pfister et al.](https://arxiv.org/abs/1611.05411) use complementary-basis tests to estimate one-shot channel capacity under arbitrary correlations. The present estimate is computed analytically from the permutation law and supplies an endpoint code for that physical model.
+
+## Consequence for the exchange channel
+
+The guarded and mean escape constructions both preserve reference entanglement. With the [mean escape theorem](../science/mean_label_escape.md), for every fixed $`0\lt \zeta\lt 2`$, a polynomially growing logical register can survive until $`t=N^{2-\zeta}/\gamma`$ at fixed small error, without operations during storage. The known stationary payload remains only order $`\log N`$.
+
+This is a statement about information-theoretic storage under the specified exchange noise. It does not establish the optimal finite-time payload, an efficient endpoint circuit, a general passive memory against additional local noise, or an experimental advantage. See the [model](../science/model.md), [mean escape theorem](../science/mean_label_escape.md), and [limitations](../science/interpretation.md).
 

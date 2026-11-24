@@ -172,7 +172,7 @@ For a finite statement, choose a fixed $`0\lt \delta\lt 1-\varepsilon`$ and assu
 
 ## What this comparison establishes
 
-The bound shows that a fully mixed set of positional labels leaves only order $`\log N`$ coherent qubits at any fixed error. The [finite-time construction](storage_theorem.md) retains a polynomially larger payload at $`t=N^{2-\zeta}/\gamma`$ for every fixed $`0\lt \zeta\lt 2`$. Together, these statements distinguish the diffusive transient from the stationary symmetry sector.
+The bound shows that a fully mixed set of positional labels leaves only order $`\log N`$ coherent qubits at any fixed error. The [mean escape construction](mean_label_escape.md) retains a polynomially larger payload at $`t=N^{2-\zeta}/\gamma`$ for every fixed $`0\lt \zeta\lt 2`$. Together, these statements distinguish the diffusive transient from the stationary symmetry sector.
 
 The upper bound uses **classical** permutation mixing as a sufficient condition for the quantum memory to approach its stationary payload. It does not prove that the quantum storage capacity has a cutoff at the same location, determine its exact finite-time value, or close the logarithmic gap between the construction and this late-time comparison. Exact zero-error collapse at every positive time is an inherited, separate statement; it is not evidence of immediate failure at a fixed nonzero error.
 

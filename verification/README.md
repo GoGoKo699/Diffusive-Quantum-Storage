@@ -4,9 +4,10 @@ Run from the repository root with Python and NumPy:
 
 ```bash
 python verification/checks.py
+python verification/check_mean_label_escape.py
 ```
 
-The script writes [`results.json`](results.json). The seed and NumPy version are recorded. Change the seed or sampling size explicitly with `--seed` and `--samples`; choose another output path with `--output`.
+The first script writes [`results.json`](results.json). The seed and NumPy version are recorded. Change the seed or sampling size explicitly with `--seed` and `--samples`; choose another output path with `--output`.
 
 ## What is checked
 
@@ -20,6 +21,15 @@ The script writes [`results.json`](results.json). The seed and NumPy version are
 | Finite parameters | Evaluate guard widths, block counts and the resulting logical-qubit bound | Arithmetic examples; large registers are not simulated |
 
 The deliberately invalid permutation changes the reduced state substantially. This confirms that the guarded-reduction check exercises the membership condition rather than merely comparing identical states.
+
+## Mean label escape checks
+
+The second script runs two independent finite calculations using NumPy.
+
+- It enumerates all permutations for four block layouts on four to six sites. It prepares the target reference and encoded qubit jointly, averages the other block inputs over vacuum and a uniform excitation, and applies the physical permutation before tracing the environment. Across 3,888 block and permutation cases it checks the recovered Bell infidelity bound and exact recovery when no target carrier leaves.
+- It diagonalizes the finite reflecting path generator. Across 6,520 interval and time cases on paths of 2–16 sites it checks the expected number of escaping labels against the diffusion bound.
+
+The finite checks exercise the inner channel and the one-tag diffusion estimate. The outer-code and subcode guarantees follow from the [analytical proof](../science/mean_label_escape.md).
 
 ## Recorded run
 
