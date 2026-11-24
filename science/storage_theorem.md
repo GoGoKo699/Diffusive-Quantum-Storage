@@ -1,4 +1,6 @@
-# Finite-time storage under local exchange noise
+# Finite-time storage with guarded symmetric blocks
+
+The [mean escape theorem](mean_label_escape.md) gives a second endpoint code with stronger asymptotic scaling. The guarded theorem below retains its own explicit finite-size guarantee.
 
 [Model and error criterion](model.md) · [Guarded reduction](guarded_blocks.md) · [Finite-size coding](one_shot_coding.md) · [Interpretation](interpretation.md)
 

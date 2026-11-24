@@ -1,6 +1,6 @@
 # Memory model and operational error
 
-[Scientific route](README.md) · [Storage theorem](storage_theorem.md) · [Late-time bound](late_time.md)
+[Scientific route](README.md) · [Mean escape theorem](mean_label_escape.md) · [Guarded code](storage_theorem.md) · [Late-time bound](late_time.md)
 
 ## A path with unrecorded local exchanges
 
@@ -26,7 +26,7 @@ Random-SWAP semigroups and their convergence are established models in quantum c
 
 ## One memory use
 
-An encoder $`\mathcal V`$ maps a logical register of dimension $`K=2^m`$ into the $`N`$ physical qubits. Only those qubits remain during the interval $`[0,t]`$. A decoder $`\mathcal D`$ acts on them afterwards and returns a $`K`$-dimensional register. General CPTP endpoint operations are permitted. The constructive encoder is an isometry into symmetric block spaces, with unused sites initialized in a fixed pure state.
+An encoder $`\mathcal V`$ maps a logical register of dimension $`K=2^m`$ into the $`N`$ physical qubits. Only those qubits remain during the interval $`[0,t]`$. A decoder $`\mathcal D`$ acts on them afterwards and returns a $`K`$-dimensional register. General CPTP endpoint operations are permitted. Both constructions use isometries into products of symmetric block spaces, with unused sites initialized in a fixed pure state. The mean escape construction uses the two-dimensional vacuum and uniform one-excitation subspace of each block.
 
 There are no controls, measurements, resets, fresh ancillas, side communications or protected auxiliary registers during storage. Ancillas used to implement endpoint channels are discarded before storage or introduced after it. An external reference can be entangled with the input and is left untouched; it is unavailable as a recovery resource. No preshared entanglement or noiseless quantum bypass is supplied.
 

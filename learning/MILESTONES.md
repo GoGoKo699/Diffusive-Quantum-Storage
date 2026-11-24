@@ -1,8 +1,8 @@
 # Project understanding map
 
-The map has **30 milestones: 12 background/preliminaries and 18 narrative/innovation**. The background connects a single carried state to a reference-preserving storage task. The longer narrative then joins the spatial guard mechanism, finite-size coding, late-time comparison and lifetime statement. This allocation gives the construction and its meaning more space than the prerequisites.
+The map has **30 milestones: 12 background/preliminaries and 18 narrative/innovation**. The background connects a single carried state to a reference-preserving storage task. The narrative follows the guarded and mean-escape codes through their finite guarantees to the late-time comparison and lifetime statement.
 
-The educational anchor is John Watrous, [*The Theory of Quantum Information* (2018)](https://cs.uwaterloo.ca/~watrous/TQI/). Its sections supply quantum-information foundations. The project pages supply the exchange-process estimates, guarded channel identity and research-level coding and mixing ingredients. The [source bridge](WATROUS_BRIDGE.md) explains that division, and the [worked examples](WORKED_EXAMPLES.md) connect the formulas to concrete registers.
+The educational anchor is John Watrous, [*The Theory of Quantum Information* (2018)](https://cs.uwaterloo.ca/~watrous/TQI/). Its sections supply quantum-information foundations. The project pages supply the exchange estimates, block channel identities, and the coding and mixing arguments. The [source bridge](WATROUS_BRIDGE.md) explains that division, and the [worked examples](WORKED_EXAMPLES.md) connect the formulas to concrete registers.
 
 The milestones are common understanding targets. Dependencies refer only to earlier milestones. M12 assembles the background into the complete task; M30 assembles the scientific account and its limits.
 
@@ -304,33 +304,33 @@ The milestones are common understanding targets. Dependencies refer only to earl
 
 **Source pointers:** [Subcode expurgation](../science/one_shot_coding.md#expurgation-to-a-half-diamond-guarantee); Watrous [§2.2.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf) and [§§3.3.2–3.3.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf).
 
-### M22 — Spend one unconditional error budget
+### M22 — Two ways to account for escaped labels
 
 **Phase:** Narrative/innovation.
 
-**Central question:** How do trajectory failure and imperfect coding combine in the physical memory?
+**Central question:** How can a block retain a qubit when some of its original labels leave?
 
-**Understanding target:** Explain the bound $`p_{\mathrm{bad}}+2\sqrt\eta`$ after all endpoint operations. Track the choices $`\delta=\epsilon/2`$ and $`\eta=\epsilon^2/16`$ without adding a success-conditioned claim or a protected bypass.
+**Understanding target:** In the guarded code, recover $`p_{\mathrm{bad}}+2\sqrt\eta`$ by combining the all-core event and the coding error, with $`\delta=\epsilon/2`$ and $`\eta=\epsilon^2/16`$. In the whole-block code, encode a qubit in the vacuum and uniform one-excitation states. For a block with $`u`$ departures, explain how retaining and projecting its uniform mode, then restoring the incoming sites, bounds Bell infidelity by $`3u/(2L)`$ in the Choi test.
 
-**Dependencies and story role:** M18, M21. Joins the spatial mechanism and finite code into one unconditional storage protocol.
+**Dependencies and story role:** M06, M08, M13, M18, M21. Connects one tagged carrier and the guarded channel to the mean-escape block channel used in M23.
 
-**Conceptual connection:** Connects complete-channel contraction and the triangle inequality to a single stated accuracy target.
+**Conceptual connection:** The guard analysis bounds the probability of a contaminated core. The whole-block analysis measures the extent of leakage by the change in a local Bell overlap.
 
-**Source pointers:** [Transfer to the exchange process](../science/one_shot_coding.md#transfer-to-the-physical-exchange-process); [explicit error choices](../science/storage_theorem.md#an-explicit-bound-with-one-error-parameter); Watrous [§3.3.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf).
+**Source pointers:** [Transfer to the exchange process](../science/one_shot_coding.md#transfer-to-the-physical-exchange-process); [explicit guarded error choices](../science/storage_theorem.md#an-explicit-bound-with-one-error-parameter); [whole-block channel](../science/mean_label_escape.md#the-logical-channel-of-one-block); [worked mean-escape example](WORKED_EXAMPLES.md#correcting-average-escape-across-blocks); Watrous [§§3.2 and 3.3.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf).
 
 ### M23 — Count the finite logical payload
 
 **Phase:** Narrative/innovation.
 
-**Central question:** What does the theorem certify for specified finite parameters?
+**Central question:** How does a mean error bound across blocks give a finite payload?
 
-**Understanding target:** Interpret the rounded block bound with $`L=8r`$, $`k=6r`$, $`B=\lfloor N/(8r)\rfloor`$ and coding overhead. Compare it with the exact $`\lfloor\log_2(N+1)\rfloor`$ baseline by taking their maximum, including cases where the block certificate is inactive.
+**Understanding target:** Turn the Bell infidelity bound into expected Pauli weight at most $`3Bq/2`$ for mean escape fraction $`q`$. Explain why a distance code correcting weight $`\lfloor B/20\rfloor`$ fails with probability at most $`30q`$ in the averaged channel. Fix an endpoint Pauli choice by linearity, then apply M21 to obtain $`\lfloor B/4\rfloor-1`$ logical qubits at half-diamond error at most $`2\sqrt{30q}`$. Compare with the rounded guarded formula for $`L=8r`$, $`k=6r`$, and with the exact symmetric baseline. Each certificate belongs to its own code.
 
 **Dependencies and story role:** M12, M14, M19, M22. Assembles all constructive ingredients into the finite theorem.
 
-**Conceptual connection:** Connects physical width, receiver–environment ratio, integer code dimension and unconditional error in one accounting statement.
+**Conceptual connection:** Linearity of expectation controls Pauli weight with correlated errors, and linearity of entanglement fidelity turns the averaged guarantee into a fixed set of endpoint operations.
 
-**Source pointers:** [Explicit finite bound](../science/storage_theorem.md#an-explicit-bound-with-one-error-parameter); [worked examples](WORKED_EXAMPLES.md); Watrous [§8.2.1](https://cs.uwaterloo.ca/~watrous/TQI/TQI.8.pdf) for the coding-task comparison.
+**Source pointers:** [Deterministic endpoints](../science/mean_label_escape.md#correlated-errors-and-deterministic-endpoints); [explicit guarded bound](../science/storage_theorem.md#an-explicit-bound-with-one-error-parameter); [worked examples](WORKED_EXAMPLES.md); Watrous [§8.2.1](https://cs.uwaterloo.ca/~watrous/TQI/TQI.8.pdf) for the coding-task comparison.
 
 ### M24 — Interpret the achieved time regimes
 
@@ -338,13 +338,13 @@ The milestones are common understanding targets. Dependencies refer only to earl
 
 **Central question:** How much information does the construction retain for growing storage times?
 
-**Understanding target:** Explain the fixed-error lower bound and its consequences at $`\gamma t=N`$ and $`\gamma t=N^{2-\zeta}`$ for fixed $`0\lt\zeta\lt2`$. Distinguish the sufficient superlogarithmic window $`\gamma t=o(N^2/(\ln N)^3)`$ from a matching optimal payload curve.
+**Understanding target:** Use the mean absolute displacement of a tagged label to get $`q\le 2\sqrt{2\gamma t}/L`$. Choose the block width for error $`\epsilon`$ and derive the fixed-error payloads $`\Omega_\epsilon(\sqrt N)`$ at $`\gamma t=N`$ and $`\Omega_\epsilon(N^{\zeta/2})`$ at $`\gamma t=N^{2-\zeta}`$ for fixed $`0\lt\zeta\lt2`$. Compare with the guarded payload and explain why the mean-escape bound certifies superlogarithmic storage when $`\gamma t=o(N^2/(\ln N)^2)`$.
 
 **Dependencies and story role:** M23. Connects the exact finite result to the contribution's macroscopic storage consequence.
 
-**Conceptual connection:** Links diffusion distance and available block count to a growing quantum payload without intervention during storage.
+**Conceptual connection:** Averaging how many labels escape removes the logarithmic width penalty from protecting every retained site at once.
 
-**Source pointers:** [Scaling consequences](../science/storage_theorem.md#scaling-that-follows-from-the-finite-bound); [physical interpretation](../science/interpretation.md#the-finite-time-consequence); Watrous [§§8.2.1–8.2.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.8.pdf), with the distinction from repeated-use capacity retained.
+**Source pointers:** [Open-path mean escape](../science/mean_label_escape.md#diffusive-storage-on-an-open-path); [guarded scaling](../science/storage_theorem.md#scaling-that-follows-from-the-finite-bound); [physical interpretation](../science/interpretation.md#payload-and-lifetime); Watrous [§§8.2.1–8.2.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.8.pdf) for the repeated-use comparison.
 
 ### M25 — Separate exact error from fixed nonzero error
 
@@ -408,13 +408,13 @@ The milestones are common understanding targets. Dependencies refer only to earl
 
 **Central question:** Which lifetime exponent follows despite the remaining logarithmic gap?
 
-**Understanding target:** Define the last admissible time for at least $`A\log_2N`$ logical qubits at fixed $`A\gt1`$ and fixed $`0\lt\epsilon\lt1/8`$. Explain the lower $`N^2/(\gamma(\ln N)^3)`$ and upper $`N^2\ln N/\gamma`$ scales, semigroup monotonicity and the limiting exponent two.
+**Understanding target:** Define the last admissible time for at least $`A\log_2N`$ logical qubits at fixed $`A\gt1`$ and fixed $`0\lt\epsilon\lt1/8`$. Explain the lower scale $`N^2/(\gamma(\ln N)^2)`$ from mean escape, the upper scale $`N^2\ln N/\gamma`$ from mixing, semigroup monotonicity, and the limiting exponent two.
 
 **Dependencies and story role:** M12, M23, M24, M28. Joins construction and converse into a precisely quantified lifetime statement.
 
 **Conceptual connection:** Connects endpoint-operation freedom and time monotonicity with a threshold-specific asymptotic conclusion, leaving the payload curve unresolved.
 
-**Source pointers:** [Quantified lifetime statement](../science/interpretation.md#a-quantified-lifetime-statement); Watrous [§§2.2.1–2.2.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf) and [§8.2.1](https://cs.uwaterloo.ca/~watrous/TQI/TQI.8.pdf) for the operational framework.
+**Source pointers:** [Quantified lifetime statement](../science/interpretation.md#payload-and-lifetime); Watrous [§§2.2.1–2.2.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf) and [§8.2.1](https://cs.uwaterloo.ca/~watrous/TQI/TQI.8.pdf) for the operational framework.
 
 ### M30 — Explain the complete contribution and its boundary
 
@@ -422,7 +422,7 @@ The milestones are common understanding targets. Dependencies refer only to earl
 
 **Central question:** What new storage capability has been established after the inherited tools and full assumptions are credited?
 
-**Understanding target:** Explain the complete route from local exchanges through guarded product loss and one-shot reference-preserving coding to growing finite-time storage, then its late-time and threshold-lifetime comparison. Separate the spatial contribution from inherited symmetry, coding and mixing tools. Keep endpoint complexity, exact noise structure, accuracy conventions and unresolved optimality visible.
+**Understanding target:** Explain how the guarded channel identity and the mean-escape block channel lead to growing one-shot payloads with fixed endpoints and reference-preserving recovery. Distinguish the exchange-specific estimates from inherited symmetry, coding, and mixing tools. Account for physical width, endpoint complexity, noise assumptions, and the gap to the optimal payload.
 
 **Dependencies and story role:** M12, M18, M21, M23, M24, M25, M28, M29. Synthesizes the project globally and connects every load-bearing stage to its scientific consequence.
 

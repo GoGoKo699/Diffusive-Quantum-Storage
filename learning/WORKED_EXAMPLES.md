@@ -1,8 +1,8 @@
-# A guarded memory, from carrier origins to a finite bound
+# Two ways to store quantum information under exchange
 
-[Learning route](README.md) · [Model and error](../science/model.md) · [Finite-time theorem](../science/storage_theorem.md)
+[Learning route](README.md) · [Model and error](../science/model.md) · [Guarded bound](../science/storage_theorem.md) · [Mean-escape bound](../science/mean_label_escape.md)
 
-This example follows one construction through its geometry, quantum channel, error budget and numerical bound. The background anchor is John Watrous, [*The Theory of Quantum Information* (2018)](https://cs.uwaterloo.ca/~watrous/TQI/): reductions and purifications in §2.1.3, channel representations in §2.2.2, fidelity in §3.2, the completely bounded trace norm in §3.3.2, and permutation symmetry in §7.1. The finite-time statements below follow the repository's linked proofs.
+The guarded example follows a carrier-origin map through its channel and error budget. The mean-escape example follows a whole block through leakage, local decoding, and correction across blocks. John Watrous's [*The Theory of Quantum Information* (2018)](https://cs.uwaterloo.ca/~watrous/TQI/) supplies reductions and purifications in §2.1.3, channel representations in §2.2.2, fidelity in §3.2, the completely bounded trace norm in §3.3.2, and permutation symmetry in §7.1.
 
 ## Two blocks of eight sites
 
@@ -157,7 +157,7 @@ r=\left\lceil2\sqrt{\gamma t x}+\frac{2x}{3}\right\rceil=11.
 
 Then $`L=8r=88`$ exceeds the sixteen available sites and $`B=0`$. The explicit guarded construction therefore certifies no improvement over the four-qubit exact baseline here. It does not assert that sixteen sites can store only four qubits at that time. At $`t=0`$, for example, all sixteen qubits can be stored exactly.
 
-## Evaluating the actual finite-size theorem
+## Evaluating the guarded finite-size theorem
 
 For general $`N,t`$, the [explicit theorem](../science/storage_theorem.md#an-explicit-bound-with-one-error-parameter) chooses
 
@@ -180,11 +180,11 @@ m_{\mathrm{block}}
 \left\lfloor B\log_2R_r-h_\epsilon\right\rfloor-1\right\}.
 ```
 
-The final lower bound is the maximum of this quantity and the exact all-time baseline. The two payloads belong to alternative codes and are not added.
+For this comparison, take the larger of the guarded certificate and the exact all-time baseline. Each value applies to its own code.
 
 The following arithmetic uses $`\epsilon=0.05`$ and $`\gamma t=N`$ in every row:
 
-| Physical sites $`N`$ | Guard $`r`$ | Blocks $`B`$ | Certified block qubits | Exact baseline | Final certified qubits |
+| Physical sites $`N`$ | Guard $`r`$ | Blocks $`B`$ | Certified block qubits | Exact baseline | Larger certificate |
 |---|---:|---:|---:|---:|---:|
 | $`2^{20}=1,048,576`$ | 8,761 | 14 | 0 | 20 | 20 |
 | $`2^{28}=268,435,456`$ | 159,843 | 209 | 304 | 28 | 304 |
@@ -205,6 +205,16 @@ m_{\mathrm{block}}
 The bad-event upper bounds for the three rows are approximately $`0.024275`$, $`0.024936`$ and $`0.024995`$. Each is at most $`0.025`$; adding the ideal subcode error $`0.025`$ gives the target half-diamond error $`0.05`$.
 
 These are evaluations of the theorem, not simulations of large memories or compiled devices. The same entries appear in [the finite verification record](../verification/results.json), produced by [the verification script](../verification/checks.py). All physical sites, guards and unused remainders are charged to $`N`$. Endpoint encoding and decoding costs are unoptimized. The large sizes and the inactive first-row block certificate make the finite overhead visible.
+
+## Correcting average escape across blocks
+
+Consider two length-four blocks. Within each block, encode logical zero as the vacuum and logical one as the equal superposition of the four single-excitation positions. Suppose the permutation exchanges sites 4 and 5, across the block boundary. Each block loses one label and gains one, for a conditional escape fraction of $`1/4`$. Each decoder receives its whole block. It reads the vacuum and symmetric one-excitation subspace as a qubit and sends the orthogonal subspace to logical zero.
+
+Concentrate on the first block's Bell pair in the normalized channel Choi state. For this diagnostic, the other block is maximally mixed on its encoded logical qubit. First imagine replacing the incoming site by vacuum. Tracing the departed site attenuates the one-excitation amplitude by $`\sqrt{3/4}`$. Projecting its surviving part onto the uniform mode attenuates it by the same factor. The resulting qubit amplitude-damping channel has transmission amplitude $`3/4`$ and Bell overlap $`(1+3/4)^2/4=49/64`$. The actual incoming site is excited with probability $`1/8`$, because the other block is half vacuum and half a uniform excitation. Restoring that site can lower the Bell overlap by at most $`1/8`$. Thus the overlap is at least $`41/64`$, consistent with the general infidelity bound $`3/(2\cdot4)=3/8`$ for one escaped label.
+
+The small example illustrates the inner channel. On a larger path, write $`q`$ for the expected fraction of escaped labels over all encoded sites. Averaging over Pauli conjugations produces a distribution over Pauli strings, including correlated strings. The individual nonidentity probabilities are the Bell infidelities, so the expected number of nonidentity positions is at most $`3Bq/2`$. A distance code corrects every string of weight at most $`\lfloor B/20\rfloor`$. Markov's inequality bounds the remaining probability by $`30q`$. Choose one Pauli conjugation by averaging and fix it into the endpoints. The subcode construction then gives uniform half-diamond error at most $`2\sqrt{30q}`$ at a cost of one logical qubit from the code's $`\lfloor B/4\rfloor`$. No random key or escape record is needed during storage. [Correlated errors and deterministic endpoints](../science/mean_label_escape.md#correlated-errors-and-deterministic-endpoints)
+
+For an example of the size calculation, take $`N=10,000,000`$, $`\gamma t=1`$, and $`\epsilon=0.1`$. The mean-escape theorem uses $`L=33,942`$, so $`B=294`$. The bound $`q\le2\sqrt{2}/L`$ gives $`2\sqrt{30q}\le0.1`$, and the stated code size is $`\lfloor294/4\rfloor-1=72`$ logical qubits. This calculation certifies the mean-escape code. The guarded and exact symmetric-space codes provide separate finite-size options. [Open-path bound](../science/mean_label_escape.md#diffusive-storage-on-an-open-path)
 
 ## Comparing transient storage with late times
 
@@ -231,10 +241,10 @@ The inherited classical mixing theorem establishes that, for fixed $`a\gt 0`$, t
 
 It supplies a late-time $`O(\log N)`$ ceiling. It does not assert a quantum-capacity cutoff at this location. Between this comparison and the constructive lower bound, logarithmic and payload-dependent gaps remain.
 
-One precise lifetime consequence fixes a threshold $`A\log_2N`$ with $`A\gt 1`$, a fixed error $`0\lt \epsilon\lt 1/8`$, and asks for the last storage time $`T_{A,\epsilon}(N)`$ at which that threshold is achievable. The [lifetime argument](../science/interpretation.md#a-quantified-lifetime-statement) gives, for sufficiently large $`N`$,
+One precise lifetime consequence fixes a threshold $`A\log_2N`$ with $`A\gt 1`$, a fixed error $`0\lt \epsilon\lt 1/8`$, and asks for the last storage time $`T_{A,\epsilon}(N)`$ at which that threshold is achievable. The [lifetime argument](../science/interpretation.md#payload-and-lifetime) gives, for sufficiently large $`N`$,
 
 ```math
-c_{A,\epsilon}\frac{N^2}{\gamma(\ln N)^3}
+c_{A,\epsilon}\frac{N^2}{\gamma(\ln N)^2}
 \le T_{A,\epsilon}(N)
 \le C_\epsilon\frac{N^2\ln N}{\gamma}.
 ```
